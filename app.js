@@ -18,7 +18,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const app = express();
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://worldwise-m3tal10.vercel.app',
     credentials: true,
   }),
 );
