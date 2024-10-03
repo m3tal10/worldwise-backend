@@ -16,8 +16,19 @@ const AppError = require('./utils/AppError');
 const globalErrorHandler = require('./controllers/errorController');
 
 const app = express();
-app.use(cors());
-app.options('*', cors());
+app.use(
+  cors({
+    origin: 'https://worldwise-m3tal10.netlify.app',
+    credentials: true,
+  }),
+);
+app.options(
+  '*',
+  cors({
+    origin: 'https://worldwise-m3tal10.netlify.app',
+    credentials: true,
+  }),
+);
 //Set security HTTP headers
 // app.use(helmet());
 
