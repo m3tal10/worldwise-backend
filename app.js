@@ -18,14 +18,14 @@ const globalErrorHandler = require('./controllers/errorController');
 const app = express();
 app.use(
   cors({
-    origin: 'https://worldwise-m3tal10.netlify.app',
+    origin: 'https://worldwise-m3tal10.netlify.app/',
     credentials: true,
   }),
 );
 app.options(
   '*',
   cors({
-    origin: 'https://worldwise-m3tal10.netlify.app',
+    origin: 'https://worldwise-m3tal10.netlify.app/',
     credentials: true,
   }),
 );
