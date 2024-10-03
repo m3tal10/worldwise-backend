@@ -12,7 +12,7 @@ const citySchema = new mongoose.Schema(
     },
     emoji: {
       type: String,
-      reuired: [true, 'A City must have a emoji.'],
+      reuired: [true, 'A City must have an emoji.'],
     },
     date: {
       type: Date,
