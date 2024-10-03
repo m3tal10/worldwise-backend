@@ -22,13 +22,13 @@ app.use(
     credentials: true,
   }),
 );
-app.options(
-  '*',
-  cors({
-    origin: 'https://worldwise-m3tal10.netlify.app',
-    credentials: true,
-  }),
-);
+// app.options(
+//   '*',
+//   cors({
+//     origin: 'https://worldwise-m3tal10.netlify.app',
+//     credentials: true,
+//   }),
+// );
 //Set security HTTP headers
 // app.use(helmet());
 
