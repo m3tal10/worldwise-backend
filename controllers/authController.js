@@ -5,7 +5,6 @@ const { promisify } = require('util');
 const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/AppError');
-const sendEmail = require('../utils/email');
 const Email = require('../utils/email');
 
 const cookieOptions = {
@@ -15,11 +14,10 @@ const cookieOptions = {
   httpOnly: true,
   sameSite: 'none',
 };
+if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
 
 const createSendToken = (user, status, res) => {
   const token = signJWTToken(user.id);
-
-  if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
 
   res.cookie('jwt', token, cookieOptions);
   //Remove password from the output
